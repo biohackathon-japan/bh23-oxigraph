@@ -1,0 +1,5 @@
+SELECT * WHERE {
+  SERVICE <http://localhost/cc/query> {
+    ?sub ?pred ?obj .
+  }
+} LIMIT 10

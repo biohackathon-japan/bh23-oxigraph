@@ -1,0 +1,27 @@
+PREFIX pdbo: <http://rdf.wwpdb.org/schema/pdbx-v50.owl#>
+
+SELECT DISTINCT ?pdb_entry ?ligand ?inchi
+WHERE {
+  # GO:0004721 -> protein serine/threonine phosphatase activity
+  ?sub pdbo:pdbx_sifts_xref_db_segments.xref_db_acc "GO:0004721" ;
+       pdbo:of_datablock ?pdb_entry .
+
+  ?pdb_entry   pdbo:has_pdbx_entity_nonpolyCategory ?nonpoly_cat .
+  ?nonpoly_cat pdbo:has_pdbx_entity_nonpoly ?nonpoly .
+  ?nonpoly     pdbo:pdbx_entity_nonpoly.name ?ligand ;
+               pdbo:pdbx_entity_nonpoly.comp_id ?comp_id .
+
+  FILTER (?ligand!="water" && !STRENDS(?ligand, " ION"))
+
+  ?pdb_entry pdbo:has_chem_compCategory ?cc_cat .
+  ?cc_cat    pdbo:has_chem_comp ?cc .
+  ?cc        pdbo:chem_comp.id ?comp_id ;
+             pdbo:link_to_chem_comp ?ccd_entry .
+  
+ SERVICE <http://localhost/cc/query> {
+  ?ccd_entry   pdbo:has_pdbx_chem_comp_descriptorCategory ?cc_desc_cat .
+  ?cc_desc_cat pdbo:has_pdbx_chem_comp_descriptor ?cc_desc .
+  ?cc_desc     pdbo:pdbx_chem_comp_descriptor.type "InChI" ;
+               pdbo:pdbx_chem_comp_descriptor.descriptor ?inchi .
+ }
+}
