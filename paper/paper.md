@@ -193,6 +193,9 @@ Additionally, we have plans to perform a comparative evaluation of the Oxigraph 
 
 The authors would like to express their sincere gratitude to the participants of BioHackathon 2023. Their collaborative efforts and valuable feedback significantly contributed to the advancement of our project. We extend our appreciation to the organizers for creating such an engaging and fruitful platform. We would like to particularly acknowledge [Thomas Pellissier Tanon](https://thomas.pellissier-tanon.fr) for his exceptional work in developing and open sourcing Oxigraph. Furthermore, we would like to recognize the Protein Data Bank in Japan (PDBj) and its collaborators for their generosity in providing the necessary RDF data.
 
+**Declaration of Generative AI and AI-assisted Technologies in the writing process**  
+
+In preparing this work, the authors utilised Grammarly and the OpenAI API to enhance readability, rectify grammatical errors, and refine language use. After using these tools, the authors conducted a rigorous review and editing process to ensure the manuscript's accuracy and relevance. The authors bear complete responsibility for the final content of the manuscript.
 
 ## References
 
