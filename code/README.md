@@ -28,7 +28,7 @@ This directory contains configuration files, scripts, and queries to deploy and 
     caddy run --config ../configuration_files/Caddyfile --adapter caddyfile
 ```
 
-- Access localhost/pdb and localhost/cc via your browser for each endpoint
+Please access http://localhost/pdb and http://localhost/cc for endpoint GUI. Endpoints are http://localhost/pdb/query and http://localhost/cc/qeury, respectively.
 
 ## Software requirements
 
