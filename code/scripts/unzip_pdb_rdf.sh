@@ -1,5 +1,18 @@
 #!/bin/bash
 
+echo
+echo $? is deprecated, please run load_pdb_rdf_gz.sh script directly.
+echo "Do you want to execute $0 (y/n [n]) ? "
+
+read ans
+
+case $ans in
+ y*|Y*) ;;
+ *)
+  echo stopped.
+  exit 1;;
+esac
+
 source env.sh
 
 find $rsrc/$rsync_base_dir_pdb -name "*.rdf.gz" > pdb_file_list

@@ -1,21 +1,8 @@
 #!/bin/bash
 
-echo
-echo $? is deprecated, please run load_cc_rdf_gz.sh script directly.
-echo "Do you want to execute $0 (y/n [n]) ? "
-
-read ans
-
-case $ans in
- y*|Y*) ;;
- *)
-  echo stopped.
-  exit 1;;
-esac
-
 source env.sh
 
-dst_dir=$rsrc/$unzip_base_dir_cc
+dst_dir=$rsrc/$rsync_base_dir_cc
 
 if [ ! -e $dst_dir ] ; then
  echo $dst_dir not found.
@@ -54,7 +41,7 @@ do
 
  echo $folder
 
- oxigraph_server --location $location_cc load --format $format --file $folder/*.rdf
+ oxigraph_server --location $location_cc load --format $format --file $folder/*.rdf.gz
 
 done < cc_folder_list
 
