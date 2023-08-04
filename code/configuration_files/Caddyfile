@@ -6,4 +6,8 @@
 	handle_path /cc* {
 		reverse_proxy localhost:8081
 	}
+
+	handle_path /bird* {
+		reverse_proxy localhost:8082
+	}
 }
